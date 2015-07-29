@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./css/common.css"/>
+    <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+    <title></title>
+</head>
+<body class="slider-demo">
+
+<div class="box">
+    <div class="content-wrap" id="container-wrap">
+        <div class="container-box" id="container-box">
+            <ul id="slider-wrap" class="slider-wrap">
+                <li>
+                    <a href="javascript:void(0);">
+                        <img src="./img/to8to.jpg" alt=""/>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                        <img src="./img/to8to2.jpg" alt=""/>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                        <img src="./img/to8to3.jpg" alt=""/>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <ul class="pointer" id="pointer">
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</div>
+<div style="margin-top:30px;width: 619px;">
+    <input type="button" value="上一张" style="float: left;" id="prevBtn" />
+    <input type="button" value="下一张" style="float: right;" id="nextBth" />
+</div>
+</body>
+
+<script type="text/javascript" src="js/slider.js"></script>
+<script type="text/javascript">
+
+    // 无缝
+    var TestSlider = new Slider({
+        navigate: $('#slider-wrap'),
+        pointNav: $('#pointer'),
+        aniType: 'slide',
+        step: 500,
+        duration: 2000,
+        seamless: true,
+        container: $('#container-wrap')
+    });
+
+    // 渐隐
+//    var TestSlider = new Slider({
+//        navigate: $('#slider-wrap'),
+//        pointNav: $('#pointer'),
+//        aniType: 'fadeIn',
+//        step: 500,
+//        duration: 2000
+//    });
+
+    // 轮播非无缝
+//    var TestSlider = new Slider({
+//        navigate: $('#slider-wrap'),
+//        aniType: 'slide',
+//        pointNav: $('#pointer'),
+//        step: 500,
+//        duration: 2000,
+//        seamless: true,
+//        container: $('#container-wrap')
+//    });
+
+    $('#prevBtn').on('click', function() {
+       TestSlider.prev();
+    });
+
+    $('#nextBth').on('click', function() {
+       TestSlider.next();
+    });
+
+</script>
+</html>
